@@ -1,6 +1,6 @@
 -- Creating departments table
 create table departments (
-	depto_no integer not null,
+	depto_no varchar not null,
 	dept_name varchar not null,
 	primary key(depto_no)
 );
@@ -37,7 +37,7 @@ create table titles (
 -- Creating dept_emp table
 create table dept_emp (
 	emp_no integer not null,
-	dept_no integer not null,
+	dept_no varchar not null,
 	from_date date not null,
 	to_date date not null,
 	primary key(emp_no, dept_no)
@@ -45,7 +45,7 @@ create table dept_emp (
 
 -- Creating dept_manager table
 create table dept_manager (
-	dept_no integer not null,
+	dept_no varchar not null,
 	emp_no integer not null,
 	from_date date not null,
 	to_date date not null,
