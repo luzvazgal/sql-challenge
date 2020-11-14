@@ -31,7 +31,7 @@ create table titles (
 	title varchar not null,
 	from_date date not null,
 	to_date date not null,
-	primary key(emp_no, title)
+	primary key(emp_no, title, from_date, to_date)
 );
 
 -- Creating dept_emp table
