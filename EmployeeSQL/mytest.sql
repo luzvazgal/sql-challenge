@@ -3,15 +3,10 @@ from salaries
 
 select * from titles
 
-select t.title, round(avg(s.salary),2)
-from titles as t 
-inner join salaries as s
-on t.emp_no = s.emp_no
-group by t.title
-
-
-select t.title, s.salary
+-- Query to get average salary by title
+select t.title, ceil(avg(s.salary))
 from titles as t 
 left join salaries as s
 on t.emp_no = s.emp_no
-order by t.title
+group by t.title
+

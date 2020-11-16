@@ -61,25 +61,42 @@ Inside 'Queries.sql' file, there's the list of queries built to get the followin
 
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
-## Bonus (Optional)
+## Jupyter Notebook
 
-As you examine the data, you are overcome with a creeping suspicion that the dataset is fake. You surmise that your boss handed you spurious data in order to test the data engineering skills of a new employee. To confirm your hunch, you decide to take the following steps to generate a visualization of the data, with which you will confront your boss:
 
-1. Import the SQL database into Pandas. (Yes, you could read the CSVs directly in Pandas, but you are, after all, trying to prove your technical mettle.) This step may require some research. Feel free to use the code below to get started. Be sure to make any necessary modifications for your username, password, host, port, and database name:
+1. Import the SQL database into Pandas.
+
+When connecting to PostgreSQL for the first time, please do:
+
+a. Add to $PATH variable, path where pg_config file is located. You may use:
+
+	export PATH=$PATH:/Library/PostgreSQL/11/bin
+
+b. Install psycopg2 (preferable using binary file)
+	
+	pip install psycopg2-binary	
+
+c. Create db config file (db_config.py) to add database connection data containing: username, password, host,  and database name
+
+
+2. Create engine using database connection using sqlaclhemy:
 
    ```sql
    from sqlalchemy import create_engine
-   engine = create_engine('postgresql://localhost:5432/<your_db_name>')
+   engine = create_engine('postgresql://username:password@localhost:port/db_name')
    connection = engine.connect()
    ```
 
-* Consult [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql) for more information.
+Add config file to .gitignore file to prevent uploading your db info
 
-* If using a password, do not upload your password to your GitHub repository. See [https://www.youtube.com/watch?v=2uaTPmNvH0I](https://www.youtube.com/watch?v=2uaTPmNvH0I) and [https://martin-thoma.com/configuration-files-in-python/](https://martin-thoma.com/configuration-files-in-python/) for more information.
+## Data Visualization
 
-2. Create a histogram to visualize the most common salary ranges for employees.
+Pandas Dataframe is used to show charts using Jupyter Notebook EmployeeSQL.ipynb
 
-3. Create a bar chart of average salary by title.
+Histogram to visualize the most common salary ranges for employees.
+
+Bar chart of average salary by title.
+ 	Query to get this Pandas Dataframe is in mytest.sql file
 
 ## Epilogue
 
