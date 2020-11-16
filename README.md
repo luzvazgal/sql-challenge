@@ -16,33 +16,36 @@ Note: You may hear the term "Data Modeling" in place of "Data Engineering," but 
 
 ### Before You Begin
 
-1. Create a new repository for this project called `sql-challenge`. **Do not add this homework to an existing repository**.
+1. Repository for this project is named  `sql-challenge`. 
 
-2. Clone the new repository to your computer.
-
-3. Inside your local git repository, create a directory for the SQL challenge. Use a folder name to correspond to the challenge: **EmployeeSQL**.
-
-4. Add your files to this folder.
-
-5. Push the above changes to GitHub.
-
-## Instructions
 
 #### Data Modeling
+Database Entity-Relationship model is located under EmployeeSQL folder, with the name 'SQL Challenge ER diagram.png'
 
-Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
 
 #### Data Engineering
 
-* Use the information you have to create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
+SQL File to create tables is TableSchema.sql. The following tables are created:
 
-* Import each CSV file into the corresponding SQL table.
+-Employee: containing all basic employee data (employee id, birth date, first name, last name, gender, hire date).
+
+- Salaries: employee's salary in a certain period of time (employee id, salary, from date, to date)
+
+- Titles: employee's titles in a certain period of time (employee id, title, from date, to date)
+
+- Departments: a catalog of all departments in the company (Pewlett Hackard)
+
+Also 'bridge' tables are created to establish a relationship between different tables:
+
+- Dept_emp: establishes a relationship between employees and the department they belong to in a certain period of time (employee id, department id, from date, to date)
+
+- Dept_manager: establishes a relationship between managers (employees table, as they're also employees) and the department they manage in a certain period of time (employee id, department id, from date, to date)
 
 #### Data Analysis
 
-Once you have a complete database, do the following:
+Inside 'Queries.sql' file, there's the list of queries built to get the following information:
 
-1. List the following details of each employee: employee number, last name, first name, gender, and salary.
+1. List details of each employee: employee number, last name, first name, gender, and salary.
 
 2. List employees who were hired in 1986.
 
