@@ -22,10 +22,12 @@ Note: You may hear the term "Data Modeling" in place of "Data Engineering," but 
 #### Data Modeling
 Database Entity-Relationship model is located under EmployeeSQL folder, with the name 'SQL Challenge ER diagram.png'
 
+Data definition is in QuickDBD-SQL Challenge file
+
 
 #### Data Engineering
 
-SQL File to create tables is TableSchema.sql. The following tables are created:
+SQL File to create tables is EmployeeSQL/TableSchema.sql. The following tables are created:
 
 -Employee: containing all basic employee data (employee id, birth date, first name, last name, gender, hire date).
 
@@ -43,7 +45,7 @@ Also 'bridge' tables are created to establish a relationship between different t
 
 #### Data Analysis
 
-Inside 'Queries.sql' file, there's the list of queries built to get the following information:
+Inside 'EmployeeSQL/Queries.sql' file, there's the list of queries built to get the following information:
 
 1. List details of each employee: employee number, last name, first name, gender, and salary.
 
@@ -76,7 +78,7 @@ b. Install psycopg2 (preferable using binary file)
 	
 	pip install psycopg2-binary	
 
-c. Create db config file (db_config.py) to add database connection data containing: username, password, host,  and database name
+c. Create db config file ('Pandas/db_config.py') to add database connection data containing: username, password, host,  and database name
 
 
 2. Create engine using database connection using sqlaclhemy:
@@ -91,7 +93,7 @@ Add config file to .gitignore file to prevent uploading your db info
 
 ## Data Visualization
 
-Pandas Dataframe is used to show charts using Jupyter Notebook EmployeeSQL.ipynb
+Pandas Dataframe is used to show charts using Jupyter Notebook 'Pandas/EmployeeSQL.ipynb'
 
 Histogram to visualize the most common salary ranges for employees.
 
