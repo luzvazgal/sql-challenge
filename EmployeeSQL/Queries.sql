@@ -23,7 +23,6 @@ from employee as e
 left join dept_emp as de on e.emp_no = de.emp_no
 left join departments as d on de.dept_no = d.depto_no;
 
---select * from departments
 
 --List all employees whose first name is "Hercules" and last names begin with "B."
 select * from employee
@@ -46,10 +45,10 @@ left join departments as d on de.dept_no = d.depto_no
 where d.dept_name = 'Sales' or d.dept_name = 'Development';
 
 --In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
-select last_name, count(*) as total_count
+select last_name, count(*) as total_count_emp
 from employee
 group by last_name
-order by total_count desc;
+order by total_count_emp desc;
 
 
 
