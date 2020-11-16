@@ -10,3 +10,6 @@ left join salaries as s
 on t.emp_no = s.emp_no
 group by t.title
 
+--Searching self's Employee ID number
+select * from employee where emp_no = 499942
+
