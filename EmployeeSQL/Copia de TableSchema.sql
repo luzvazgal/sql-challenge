@@ -51,24 +51,3 @@ create table dept_manager (
 	to_date date not null,
 	primary key(dept_no, emp_no)
 );
-
--- Alter tables as Foreign Keys were not added when creating the tables
---Table salaries
-ALTER TABLE salaries
-ADD FOREIGN KEY (emp_no) REFERENCES employee(emp_no);
-	
---Table titles
-ALTER TABLE titles
-ADD FOREIGN KEY (emp_no) REFERENCES employee(emp_no);
-
---Table dept_emp
-ALTER TABLE dept_emp
-ADD FOREIGN KEY (emp_no) REFERENCES employee(emp_no);
-
-ALTER TABLE dept_emp
-ADD FOREIGN KEY (dept_no) REFERENCES departments(depto_no);
-	
---Table dept_manager
-ALTER TABLE dept_manager
-ADD FOREIGN KEY (emp_no) REFERENCES employee(emp_no),
-ADD FOREIGN KEY (dept_no) REFERENCES departments(depto_no);
